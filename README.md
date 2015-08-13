@@ -1,1 +1,2 @@
-# euler
+# Project Euler
+## Done in Python
