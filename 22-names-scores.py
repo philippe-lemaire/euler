@@ -13,7 +13,7 @@ names.sort()
 
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-mydict = {k:v for v,k in zip(range(1,27),alphabet)}
+mydict = {k:v for k,v in zip(alphabet,range(1,27))}
 
 def worth(name):
     res = 0
