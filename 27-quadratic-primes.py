@@ -49,13 +49,12 @@ def count_primes(a, b):
     return n
 
 
-mylist = []
 best = 0
 best_coefs = (0,0)
 for a in range(-999, 1000):
     for b in range(-999, 1000):
         challenger = count_primes(a, b)
-        if  challenger > best:
+        if challenger > best:
             best = challenger
             best_coefs = (a , b)
 
