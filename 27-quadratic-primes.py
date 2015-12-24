@@ -19,3 +19,46 @@ e.g. |11| = 11 and |−4| = 4
 Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
 '''
 
+def is_a_prime(n):
+    ''' takes a positive integer as argument. Returns True if it's a prime number, False if it's not a prime'''
+    n = abs(int(n))
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    max = n**0.5 + 1
+    i = 3
+
+    while i <= max:
+        if n % i == 0:
+            return False
+        i = i + 2
+    return True
+
+
+def quadratic(n, a, b):
+    return n**2 + a * n + b
+
+
+def count_primes(a, b):
+    n = 0
+    while is_a_prime(quadratic(n, a, b)):
+        n += 1
+    return n
+
+
+mylist = []
+best = 0
+best_coefs = (0,0)
+for a in range(-999, 1000):
+    for b in range(-999, 1000):
+        challenger = count_primes(a, b)
+        if  challenger > best:
+            best = challenger
+            best_coefs = (a , b)
+
+print("n² +" , best_coefs[0],"n +" , best_coefs[1],"donne", best, "nombres premiers consécutifs")
+print("le dernier mot = ", best_coefs[0] * best_coefs[1])
+
