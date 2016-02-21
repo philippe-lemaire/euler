@@ -9,3 +9,7 @@ It is possible to make £2 in the following way:
 1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
 How many different ways can £2 be made using any number of coins?
 '''
+
+a*1 + b*2 + c*5 + d*10 + e*20 + f*50 +g*100 + h*200
+
+
