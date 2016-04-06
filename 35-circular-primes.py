@@ -28,25 +28,32 @@ def is_a_prime(n):
         i = i + 2
     return True
 
-primes_bom = [1, 2, 3]
+primes_bom = []
 
-for num in range(5, 1000000, 2):
+for num in range(3, 1000000, 2):
     if is_a_prime(num):
         primes_bom.append(num)
 
-counter = 0
+
+primes_trimmed = list(primes_bom)
 
 for prime in primes_bom:
-    perms = permutations(str(prime))
-    gen_counter = 0
-    prime_counter = 0
-    for perm in perms:
-        gen_counter += 1
-        if is_a_prime(int("".join(perm))):
-            prime_counter += 1
-    if prime_counter == gen_counter:
-        counter += 1
-        print(int("".join(perm)), " is a circular prime")
+    test = str(prime)
+    if ("0" in test) or ("2" in test) or ("4" in test) or ("6" in test) or ("8" in test):
+        primes_trimmed.remove(prime)
+        print(prime, " removed because at least one permutation would be even.")
         
-print(primes_bom)
-print(counter)
+primes_trimmed.insert(0,2)
+
+final_list = list(primes_trimmed)
+
+for prime in primes_trimmed:
+    perms = permutations(str(prime))
+    for perm in perms:
+        if not is_a_prime(int("".join(perm))):
+            final_list.remove(prime)
+            print(prime, " removed because at least one permutation isn’t prime.")
+            break
+        
+print(final_list)
+print(len(final_list))
