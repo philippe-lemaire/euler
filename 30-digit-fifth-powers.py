@@ -22,7 +22,7 @@ def sum_of_fifths(n):
 
 mylist = []
 
-for n in range(2, 100000):
+for n in range(2, 1000000):
     if n == sum_of_fifths(n):
         mylist.append(n)
 
