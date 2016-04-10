@@ -20,7 +20,7 @@ sundays_first = 0
 
 for year in range (1901, 2001):
     for month in range (1, 13):
-        if 6 in calendar.monthrange(year, month):
+        if calendar.monthrange(year, month)[0] == 6:
             sundays_first += 1
 
 print("Number of Sundays that fell on the first of the month during the twentieth century = ", sundays_first)
