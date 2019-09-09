@@ -1,7 +1,8 @@
 '''
 Circular primes
 Problem 35
-The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+The number, 197, is called a circular prime because all rotations of the digits: 
+197, 971, and 719, are themselves prime.
 
 There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
 
@@ -11,7 +12,8 @@ How many circular primes are there below one million?
 from itertools import permutations
 
 def is_a_prime(n):
-    ''' takes a positive integer as argument. Returns True if it's a prime number, False if it's not a prime'''
+    ''' takes a positive integer as argument. 
+    Returns True if it's a prime number, False if it's not a prime'''
     n = abs(int(n))
     if n < 2:
         return False
@@ -29,7 +31,7 @@ def is_a_prime(n):
     return True
 
 def rotate(num):
-    '''takes an integer and retuns a set of all its possible digit rotations'''
+    '''takes an integer and returns a set of all its possible digit rotations'''
     num_string = str(num)
     rotations_list = []
     for i in range(0, len(num_string)):
