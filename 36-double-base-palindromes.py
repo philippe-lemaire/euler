@@ -22,6 +22,6 @@ def is_palindrome_base2(n):
 for candidate in range(0,1000001):
     if is_palindrome_base10(candidate) and is_palindrome_base2(candidate):
         double_based_palindromes.append(candidate)
-        print(candidate, " added to the list of double based palindromes")
+        print(candidate, "/", bin(candidate)[2:], "added to the list of double based palindromes")
         
 print("The sum of double based palindromes under 1 million is ", sum(double_based_palindromes))
