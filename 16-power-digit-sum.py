@@ -7,4 +7,4 @@ res = 0
 for digit in mystring:
     res += int(digit)
 
-print(res)
+print("The result is ", res)
