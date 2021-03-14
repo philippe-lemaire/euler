@@ -9,6 +9,7 @@ For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 a
 Evaluate the sum of all the amicable numbers under 10000.
 '''
 
+
 def d(n):
     res = 0
     if n == 0 or n == 1:
@@ -23,8 +24,10 @@ def d(n):
 
     return res
 
+
 def is_amicable(n):
     return n == d(d(n)) and d(n) != n
+
 
 mysum = 0
 
@@ -34,4 +37,3 @@ for i in range(1, 10000):
         print(i)
 
 print(mysum)
-
